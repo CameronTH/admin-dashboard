@@ -18,7 +18,7 @@ body {
   display: grid;
   min-height: 100vh;
   background-color: rgb(228, 228, 228);
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: min-content 4fr;
   grid-template-rows: min-content 3fr;
 }
 .sidebar {
@@ -93,12 +93,14 @@ body {
   display: flex;
   gap: 2rem;
   justify-content: end;
+  align-items: center;
 }
 .buttons > button {
   background-color: var(--main-color);
   color: var(--text-white);
   border-style: none;
   padding: 1rem 2rem;
+  max-height: 3rem;
   border-radius: 50px;
   font-weight: 600;
   transition: opacity 0.15s;
@@ -106,4 +108,51 @@ body {
 
 .buttons > button:hover {
   opacity: 0.9;
+}
+
+.welcome-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.welcome-info > .profile-picture {
+  width: 100px;
+}
+
+.welcome-name > p {
+  margin: 0;
+}
+
+.welcome-name {
+  font-weight: 600;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.main-left {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-auto-rows: 220px;
+  gap: 1.5rem;
+}
+.main-left > div {
+  padding: 1rem;
+  background-color: var(--text-white);
+
+  border-radius: 10px;
+  border-left: 10px solid rgb(255, 191, 54);
+}
+
+.main-right {
+  padding: 1rem;
+}
+
+.announcements {
+  background-color: var(--text-white);
+  border-radius: 10px;
+  padding: 1rem;
 }
