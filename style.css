@@ -135,8 +135,8 @@ body {
 .main-left {
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  grid-auto-rows: 220px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
   gap: 1.5rem;
 }
 .main-left > div {
@@ -154,5 +154,24 @@ body {
 .announcements {
   background-color: var(--text-white);
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.announcements ~ div {
+  background-color: var(--text-white);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .main-content {
+    display: block;
+  }
+  .main-right {
+    display: none;
+  }
+  .welcome-info {
+    display: none;
+  }
 }
