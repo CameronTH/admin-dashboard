@@ -25,15 +25,21 @@ body {
   background-color: var(--main-color);
   grid-row: 1 /-1;
   color: var(--text-white);
-  padding: 1rem;
+  padding: 2rem;
 }
 
-.sidebar > ul {
+.sidebar ul {
   margin: 0;
-  padding: 1rem;
+  padding: 0;
+  margin-bottom: 5rem;
 }
 
-.sidebar > ul > li {
+.sidebar > div {
+  position: sticky;
+  top: 1rem;
+}
+
+.sidebar > div > ul > li {
   list-style-type: none;
   font-size: 1.3rem;
   display: grid;
@@ -44,7 +50,7 @@ body {
   transition: opacity 0.15s;
 }
 
-.sidebar > ul > li:hover {
+.sidebar > div > ul > li:hover {
   cursor: pointer;
   text-decoration: underline;
   opacity: 0.7;
@@ -61,6 +67,7 @@ body {
 .nav-bar {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .nav-bar > input {
@@ -68,7 +75,8 @@ body {
   height: 2rem;
   border-style: none;
   border-radius: 50px;
-  width: min(500px, 100%);
+  width: min(700px, 100%);
+  font-size: 1.5rem;
 }
 
 .account {
@@ -107,6 +115,7 @@ body {
 }
 
 .buttons > button:hover {
+  cursor: pointer;
   opacity: 0.9;
 }
 
@@ -134,12 +143,14 @@ body {
 
 .main-left {
   padding: 1rem;
+}
+
+.cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
   gap: 1.5rem;
 }
-.main-left > div {
+.cards > div {
   padding: 1rem;
   background-color: var(--text-white);
 
@@ -164,7 +175,7 @@ body {
   padding: 1.5rem;
 }
 
-@media only screen and (max-width: 1200px) {
+@media screen and (max-width: 1000px) {
   .main-content {
     display: block;
   }
@@ -172,6 +183,14 @@ body {
     display: none;
   }
   .welcome-info {
+    display: none;
+  }
+  .buttons {
+    grid-column: 1/-1;
+    gap: 5px;
+    justify-content: center;
+  }
+  .profile-picture {
     display: none;
   }
 }
